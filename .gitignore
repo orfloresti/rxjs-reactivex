@@ -1,0 +1,14 @@
+# Ignore files
+
+## Vim temps
+
+*~
+
+## Build 
+
+dist/
+
+
+## Dependecies
+node_modules/
+
