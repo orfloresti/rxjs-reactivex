@@ -1,20 +1,25 @@
-# To start development mode
+# TypeScript Projects
+
+## To start development mode
 
 `Run in different consoles`
 
 Init buil and watch
+
 ```bash
 npm run start:build
 ```
 
-Init a nodemon 
+Init a nodemon
+
 ```bash
 npm run start:dev
 ```
 
-# Create a new project
+## Create a new project
 
 Create new project
+
 ```bash
 npm i typescript --save-dev
 ```

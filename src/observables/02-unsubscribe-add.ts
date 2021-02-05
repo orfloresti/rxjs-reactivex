@@ -1,28 +1,28 @@
 import { Observable, Observer } from 'rxjs';
 
 const observer: Observer<any> = {
-    next : value => console.log('next:', value ),
-    error: error => console.warn('error:', error ),
+    next: value => console.log('next:', value),
+    error: error => console.warn('error:', error),
     complete: () => console.info('completado')
 };
 
 
-const intervalo$ = new Observable<number>( subscriber => {
+const intervalo$ = new Observable<number>(subscriber => {
 
     // Crear un contador, 1,2,3,4,5,......
     let count = 0;
 
-    const interval = setInterval( () => {
+    const interval = setInterval(() => {
         // cada segundo
         count++;
-        subscriber.next( count );
+        subscriber.next(count);
         console.log(count);
 
     }, 1000);
 
     setTimeout(() => {
         subscriber.complete();
-    }, 2500 );
+    }, 2500);
 
     return () => {
         clearInterval(interval);
@@ -32,12 +32,12 @@ const intervalo$ = new Observable<number>( subscriber => {
 });
 
 
-const subs1 = intervalo$.subscribe( observer );
-const subs2 = intervalo$.subscribe( observer );
-const subs3 = intervalo$.subscribe( observer );
+const subs1 = intervalo$.subscribe(observer);
+const subs2 = intervalo$.subscribe(observer);
+const subs3 = intervalo$.subscribe(observer);
 
-subs1.add( subs2 )
-     .add( subs3 );
+subs1.add(subs2)
+    .add(subs3);
 
 
 setTimeout(() => {
@@ -47,10 +47,3 @@ setTimeout(() => {
 
     console.log('Completado timeout');
 }, 6000);
-
-
-
-
-
-
-

@@ -4,15 +4,17 @@
   "description": "Project to learn RxJs",
   "main": "index.js",
   "dependencies": {
+    "node-fetch": "^2.6.1",
     "rxjs": "^6.6.3"
   },
   "devDependencies": {
+    "@types/node-fetch": "^2.5.8",
     "nodemon": "^2.0.7",
     "typescript": "^4.1.3"
   },
   "scripts": {
-	"build": "npx tsc",
-	"start:build": "npx tsc -w",
+    "build": "npx tsc",
+    "start:build": "npx tsc -w",
     "start:dev": "nodemon ./dist"
   },
   "author": "orflores",
