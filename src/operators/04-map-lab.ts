@@ -1,7 +1,7 @@
 import { fromEvent } from "rxjs";
 import { map, tap } from "rxjs/operators";
 
-const texto = document.createElement('div');
+const texto = document.createElement("div");
 texto.innerHTML = `
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu magna finibus, eleifend nibh vitae, dignissim mi. Quisque ante ipsum, molestie sit amet ultricies id, pellentesque in ligula. Sed finibus justo a facilisis accumsan. Vivamus elit felis, ullamcorper sed vestibulum at, varius eu lacus. Aenean ac erat dapibus, elementum ex eget, porttitor diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent tincidunt auctor leo, vel lacinia felis lacinia at. In pulvinar, ante nec auctor consectetur, quam diam tincidunt orci, ut elementum nunc eros a magna. Sed lacinia arcu ac metus sagittis pulvinar. Phasellus iaculis facilisis nunc nec porta. Aliquam quis nulla id dolor condimentum scelerisque. Donec lacinia ipsum ac justo feugiat efficitur.
@@ -24,36 +24,32 @@ Cras tempor ex eget finibus aliquet. Integer blandit posuere diam scelerisque he
 <br /><br />
 Vivamus interdum leo enim, a ultrices lectus iaculis sit amet. Etiam eu urna in dolor porta pulvinar. Fusce rutrum vel nunc sed molestie. Donec eleifend mauris lorem, eget consectetur felis tempus at. Quisque at lectus nulla. Donec libero massa, dictum sed lacus sed, porttitor elementum tortor. Morbi eu libero eget sem feugiat sollicitudin. `;
 
-const body = document.querySelector('body');
+const body = document.querySelector("body");
 
-body.append( texto );
+body.append(texto);
 
-const progressBar = document.createElement('div');
-progressBar.setAttribute('class', 'progress-bar');
+const progressBar = document.createElement("div");
+progressBar.setAttribute("class", "progress-bar");
 body.append(progressBar);
 
-// Function to calculate 
-const calPercentScroll = ( event )=> {
-    const {
-        scrollTop,
-        scrollHeight,
-        clientHeight
-    } = event.target.documentElement;
+// Function to calculate
+const calPercentScroll = (event) => {
+  const { scrollTop, scrollHeight, clientHeight } =
+    event.target.documentElement;
 
-    return ( scrollTop / (scrollHeight - clientHeight) ) * 100;
-    
-}
+  return (scrollTop / (scrollHeight - clientHeight)) * 100;
+};
 
 // Streams
-const scroll$ = fromEvent(document, 'scroll');
+const scroll$ = fromEvent(document, "scroll");
 // scroll$.subscribe( console.log );
 
 const progress$ = scroll$.pipe(
-    // map( event =>  calPercentScroll(event) )
-    map( calPercentScroll ),
-    tap( console.log )
+  // map( event =>  calPercentScroll(event) )
+  map(calPercentScroll),
+  tap(console.log)
 );
 
-progress$.subscribe( porcentaje => {
-    progressBar.style.width = `${porcentaje}%`;
+progress$.subscribe((porcentaje) => {
+  progressBar.style.width = `${porcentaje}%`;
 });

@@ -11,10 +11,14 @@ const saludar2 = (nombre: any) => console.log(`Hello ${nombre}`);
 // asyncScheduler.schedule(saludar2, 2000, "RxJs in typescript");
 
 // As setInterval
-const subs = asyncScheduler.schedule(function (state: any) {
+const subs = asyncScheduler.schedule(
+  function (state: any) {
     console.log("state", state);
     this.schedule(state + 1, 1000);
-}, 3000, 0)
+  },
+  3000,
+  0
+);
 
 // setTimeout(() => { subs.unsubscribe(); }, 6000)
 
