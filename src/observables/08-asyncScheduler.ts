@@ -12,12 +12,12 @@ const saludar2 = (nombre: any) => console.log(`Hello ${nombre}`);
 
 // As setInterval
 const subs = asyncScheduler.schedule(
-  function (state: any) {
-    console.log("state", state);
-    this.schedule(state + 1, 1000);
-  },
-  3000,
-  0
+	function (state: any) {
+		console.log("state", state);
+		this.schedule(state + 1, 1000);
+	},
+	3000,
+	0
 );
 
 // setTimeout(() => { subs.unsubscribe(); }, 6000)

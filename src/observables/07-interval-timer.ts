@@ -1,8 +1,8 @@
 import { interval, timer } from "rxjs";
 
 const observer = {
-  next: (val: any) => console.log("NEXT: ", val),
-  complete: () => console.log("COMPLETE"),
+	next: (val: any) => console.log("NEXT: ", val),
+	complete: () => console.log("COMPLETE"),
 };
 
 const hoyEn5 = new Date();

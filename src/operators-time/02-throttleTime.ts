@@ -12,12 +12,12 @@ document.querySelector("body").append(input);
 
 const input$ = fromEvent(input, "keyup");
 input$
-  .pipe(
-    throttleTime(1000, asyncScheduler, {
-      leading: true,
-      trailing: true,
-    }),
-    pluck("target", "value"),
-    distinctUntilChanged()
-  )
-  .subscribe(console.log);
+	.pipe(
+		throttleTime(1000, asyncScheduler, {
+			leading: true,
+			trailing: true,
+		}),
+		pluck("target", "value"),
+		distinctUntilChanged()
+	)
+	.subscribe(console.log);

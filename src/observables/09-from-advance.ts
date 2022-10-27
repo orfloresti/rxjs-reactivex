@@ -7,17 +7,17 @@ import fetch from "node-fetch";
  */
 
 const observer = {
-  next: (val: any) => console.log("NEXT: ", val),
-  complete: () => console.log("COMPLETE"),
+	next: (val: any) => console.log("NEXT: ", val),
+	complete: () => console.log("COMPLETE"),
 };
 
 const myGenerator = function* () {
-  yield 1;
-  yield 2;
-  yield 3;
-  yield 4;
-  yield 5;
-  yield 6;
+	yield 1;
+	yield 2;
+	yield 3;
+	yield 4;
+	yield 5;
+	yield 6;
 };
 
 const myIterable = myGenerator();

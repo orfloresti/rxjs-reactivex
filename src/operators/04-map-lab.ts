@@ -34,10 +34,10 @@ body.append(progressBar);
 
 // Function to calculate
 const calPercentScroll = (event) => {
-  const { scrollTop, scrollHeight, clientHeight } =
-    event.target.documentElement;
+	const { scrollTop, scrollHeight, clientHeight } =
+		event.target.documentElement;
 
-  return (scrollTop / (scrollHeight - clientHeight)) * 100;
+	return (scrollTop / (scrollHeight - clientHeight)) * 100;
 };
 
 // Streams
@@ -45,11 +45,11 @@ const scroll$ = fromEvent(document, "scroll");
 // scroll$.subscribe( console.log );
 
 const progress$ = scroll$.pipe(
-  // map( event =>  calPercentScroll(event) )
-  map(calPercentScroll),
-  tap(console.log)
+	// map( event =>  calPercentScroll(event) )
+	map(calPercentScroll),
+	tap(console.log)
 );
 
 progress$.subscribe((porcentaje) => {
-  progressBar.style.width = `${porcentaje}%`;
+	progressBar.style.width = `${porcentaje}%`;
 });

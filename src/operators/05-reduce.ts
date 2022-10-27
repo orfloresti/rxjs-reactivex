@@ -4,7 +4,7 @@ import { reduce, take, tap } from "rxjs/operators";
 const numbers = [1, 2, 3, 4, 5];
 
 const totalReducer = (sum: number, currentValue: number) => {
-  return sum + currentValue;
+	return sum + currentValue;
 };
 
 const total = numbers.reduce(totalReducer, 0);
@@ -16,8 +16,8 @@ const total = numbers.reduce(totalReducer, 0);
  *
  */
 interval(500)
-  .pipe(take(6), tap(console.log), reduce(totalReducer))
-  .subscribe({
-    next: (val) => console.log("next: ", val),
-    complete: () => console.log("complete"),
-  });
+	.pipe(take(6), tap(console.log), reduce(totalReducer))
+	.subscribe({
+		next: (val) => console.log("next: ", val),
+		complete: () => console.log("complete"),
+	});
