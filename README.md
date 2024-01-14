@@ -1,4 +1,6 @@
-# TypeScript Projects
+# ReactiveX - RxJs
+
+[ReactiveX - RxJs:De cero hasta los detaller](https://www.udemy.com/course/rxjs-de-cero-hasta-los-detalles)
 
 ## To start development mode
 
